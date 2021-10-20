@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from "mongoose";
 import cors from 'cors';
+import path from 'path';
 import mongoURI from './mongouri.js';
 import bookRoutes from './routes/books.js';
 import noteRoutes from './routes/notes.js';
@@ -15,7 +16,7 @@ app.use(cors({ origin: true, credentials: true }));
 app.use('/books', bookRoutes);
 app.use('/notes', noteRoutes);
 
-mongoose.connect(mongoURI, { useUnifiedTopology: true })
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(port, () => {
     console.log(`${port}に接続しました`)
   }))
