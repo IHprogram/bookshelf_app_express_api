@@ -1,5 +1,9 @@
 {
   "name": "bookshelf_app_express_api",
+  "engines": {
+    "node": "14.16.1",
+    "npm": "8.0.0"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
