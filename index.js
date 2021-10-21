@@ -9,9 +9,8 @@ const app = express();
 const port = process.env.REACT_APP_PORT || 3002;
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000'],
   credentials: true,
-  optionsSuccessStatus: 200
 }
 
 app.use(express.json({ limit: '50mb', extended: true }));
