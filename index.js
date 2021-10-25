@@ -6,7 +6,7 @@ import bookRoutes from './routes/books.js';
 import noteRoutes from './routes/notes.js';
 
 const app = express();
-const port = process.env.PORT || 3002;
+const port = process.env.REACT_APP_PORT || 3002;
 
 const corsOptions = {
   origin: true,
@@ -24,8 +24,3 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(port, () => {
     console.log(`${port}に接続しました`)
   }))
-
-// ドメイン直下にアクセスしたときのCORS許可
-app.get('/mypage', (req, res, next) => {
-  res.set({ 'Access-Control-Allow-Origin': '*' });
-});
