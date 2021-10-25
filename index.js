@@ -4,9 +4,11 @@ import cors from 'cors';
 import mongoURI from './mongouri.js';
 import bookRoutes from './routes/books.js';
 import noteRoutes from './routes/notes.js';
+import dotenv from 'dotenv';
 
 const app = express();
-const port = process.env.REACT_APP_PORT || 3002;
+const config = dotenv.config().parsed;
+const port = config.REACT_APP_PORT || 3002;
 
 const corsOptions = {
   origin: true,
