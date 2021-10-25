@@ -6,7 +6,7 @@ import bookRoutes from './routes/books.js';
 import noteRoutes from './routes/notes.js';
 
 const app = express();
-const port = process.env.REACT_APP_PORT || 3002;
+const port = process.env.PORT || 3002;
 
 const corsOptions = {
   origin: ['http://localhost:3000'],
