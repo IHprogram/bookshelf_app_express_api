@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-const config = dotenv.config().parsed;
-const mongoURI = config.REACT_APP_MONGO_URI;
+const config = dotenv.config();
+const mongoURI = config.parsed.REACT_APP_MONGO_URI;
 
 export default mongoURI;
