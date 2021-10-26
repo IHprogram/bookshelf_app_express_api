@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from "mongoose";
 import cors from 'cors';
-import mongoURI from './mongouri.js';
+// import mongoURI from './mongouri.js';
 import bookRoutes from './routes/books.js';
 import noteRoutes from './routes/notes.js';
 
