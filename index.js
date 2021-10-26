@@ -22,6 +22,10 @@ app.use(cors(corsOptions));
 app.use('/books', bookRoutes);
 app.use('/notes', noteRoutes);
 
+app.get('/', (req, res) => {
+  res.send("Hello World!");
+})
+
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(port, () => {
     console.log(`${port}に接続しました`)
