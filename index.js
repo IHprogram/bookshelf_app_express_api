@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.REACT_APP_PORT || 3002;
 
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.REACT_APP_MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(PORT, () => {
     console.log(`${PORT}に接続しました`)
   }))
