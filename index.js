@@ -6,7 +6,6 @@ import bookRoutes from './routes/books.js';
 import noteRoutes from './routes/notes.js';
 
 const app = express();
-const port = process.env.REACT_APP_PORT || 3002;
 
 const corsOptions = {
   origin: true,
@@ -24,7 +23,9 @@ app.get('/', (req, res) => {
   res.send("Hello World!");
 })
 
+const PORT = process.env.REACT_APP_PORT || 3002;
+
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(port, () => {
-    console.log(`${port}に接続しました`)
+  .then(() => app.listen(PORT, () => {
+    console.log(`${PORT}に接続しました`)
   }))
