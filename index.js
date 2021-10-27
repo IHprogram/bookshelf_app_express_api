@@ -4,6 +4,7 @@ import cors from 'cors';
 // import mongoURI from './mongouri.js';
 import bookRoutes from './routes/books.js';
 import noteRoutes from './routes/notes.js';
+import dotenv from 'dotenv';
 
 const app = express();
 
@@ -23,7 +24,13 @@ app.get('/', (req, res) => {
   res.send("Hello World!");
 })
 
-const PORT = process.env.REACT_APP_PORT || 3002;
+const PORT = process.env.PORT || 3002;
+
+if (process.env.NODE_ENV !== 'production') {
+  const config = dotenv.config();
+  const mongoURI = config.parsed.REACT_APP_MONGO_URI;
+  console.log(process.env.NODE_ENV);
+}
 
 mongoose.connect(process.env.REACT_APP_MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(PORT, () => {
