@@ -2,7 +2,6 @@ import Book from "../models/books.js";
 
 export const getBooks = async (req, res) => {
   try {
-    res.setHeader('Access-Control-Allow-Origin', 'http:localhost:3000')
     const book = await Book.find();
     res.status(200).json(book);
   } catch (error) {
